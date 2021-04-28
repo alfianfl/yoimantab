@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{b28fb5b2-6244-0c6b-a872-40dd957e5fe0}</ProjectGuid>
+    <ProjectGuid>{18084875-04f3-3826-8571-70fa27192408}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -568,31 +568,31 @@
         <HintPath>C:/Unity/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>D:/Coolyeah/Semester 6/InteraksiManusiaKomputer/Unity/MazekuYoiMantap/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>D:/Coolyeah/Semester 6/yoimantab/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>D:/Coolyeah/Semester 6/InteraksiManusiaKomputer/Unity/MazekuYoiMantap/New Unity Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>D:/Coolyeah/Semester 6/yoimantab/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>D:/Coolyeah/Semester 6/InteraksiManusiaKomputer/Unity/MazekuYoiMantap/New Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>D:/Coolyeah/Semester 6/yoimantab/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>D:/Coolyeah/Semester 6/InteraksiManusiaKomputer/Unity/MazekuYoiMantap/New Unity Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>D:/Coolyeah/Semester 6/yoimantab/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>D:/Coolyeah/Semester 6/InteraksiManusiaKomputer/Unity/MazekuYoiMantap/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>D:/Coolyeah/Semester 6/yoimantab/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-        <HintPath>D:/Coolyeah/Semester 6/InteraksiManusiaKomputer/Unity/MazekuYoiMantap/New Unity Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+        <HintPath>D:/Coolyeah/Semester 6/yoimantab/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>D:/Coolyeah/Semester 6/InteraksiManusiaKomputer/Unity/MazekuYoiMantap/New Unity Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>D:/Coolyeah/Semester 6/yoimantab/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>D:/Coolyeah/Semester 6/InteraksiManusiaKomputer/Unity/MazekuYoiMantap/New Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>D:/Coolyeah/Semester 6/yoimantab/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>D:/Coolyeah/Semester 6/InteraksiManusiaKomputer/Unity/MazekuYoiMantap/New Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>D:/Coolyeah/Semester 6/yoimantab/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
