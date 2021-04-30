@@ -7,6 +7,7 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitifity = 100f;
     public Transform playerBody ;
     float xRotation = 0f;
+    private float rotY = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +21,11 @@ public class MouseLook : MonoBehaviour
         
         // rotasi dibatasi dari -90derjat sampai 90 derjat pada sumbu Y
         xRotation -= mouseY;
+        rotY += mouseX * mouseSensitifity * Time.deltaTime;
         xRotation = Mathf.Clamp(xRotation,-90f,90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation,0f,0f);
-        playerBody.Rotate(Vector3.up * mouseX) ;
+        transform.localRotation = Quaternion.Euler(xRotation,rotY,0f);
+        playerBody.Rotate(Vector3.up * mouseY) ;
     }
+
 }

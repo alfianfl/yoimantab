@@ -36,9 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\Health.cs" />
      <Compile Include="Assets\Script\MouseLook.cs" />
      <Compile Include="Assets\Script\MovementChar.cs" />
+     <Compile Include="Assets\Script\PickupItem.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
