@@ -36,8 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\ImageScript.cs" />
      <Compile Include="Assets\Script\MouseLook.cs" />
      <Compile Include="Assets\Script\MovementChar.cs" />
+     <Compile Include="Assets\Script\PanelScript.cs" />
      <Compile Include="Assets\Script\PickupItem.cs" />
      <Compile Include="Assets\Script\Question\AnswerScript.cs" />
      <Compile Include="Assets\Script\Question\QuestionAndAnswers.cs" />
