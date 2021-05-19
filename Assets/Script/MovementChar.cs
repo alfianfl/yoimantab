@@ -25,23 +25,47 @@ public class MovementChar : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) ||Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.S) ||Input.GetKey(KeyCode.D) )
-        {
-            animator.SetInteger("condition",1);
-            moveDir = new Vector3(0,0,1);
-            moveDir *= speed;
-            moveDir = transform.TransformDirection(moveDir);
-            Durability();
+        if(currentHealth > 0) {
+            if (Input.GetKey(KeyCode.W) ||Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D) )
+            {
+                animator.SetInteger("condition",1);
+                animator.SetBool("defeat",false);
+                float h = Input.GetAxisRaw("Horizontal");
+                float v = Input.GetAxisRaw("Vertical");
+                moveDir = new Vector3(h,0,v).normalized;
+                moveDir *= speed;
+                moveDir = transform.TransformDirection(moveDir);
+                rot += Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime * 2;
+                transform.eulerAngles = new Vector3 (0,rot,0);
+                controller.Move(moveDir*Time.deltaTime);
+                Durability();
+            }
+            if (Input.GetKey(KeyCode.S)) 
+            {
+                animator.SetInteger("condition",1);
+                animator.SetBool("defeat",false);
+                moveDir = new Vector3(0,0,1).normalized;
+                moveDir *= speed;
+                moveDir = transform.TransformDirection(moveDir);
+                rot += 3 * rotSpeed * Time.deltaTime;
+                transform.eulerAngles = new Vector3 (0,rot,0);
+                
+                controller.Move(moveDir*Time.deltaTime);
+                Durability();
+            }
+            if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) ||Input.GetKeyUp(KeyCode.S) ||Input.GetKeyUp(KeyCode.D) ){
+                animator.SetInteger("condition",0);
+                animator.SetBool("defeat",false);
+                moveDir = new Vector3(0,0,0);
+            }
+
         }
-        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) ||Input.GetKeyUp(KeyCode.S) ||Input.GetKeyUp(KeyCode.D) ){
+        else {
             animator.SetInteger("condition",0);
+            animator.SetBool("defeat",true);
+
             moveDir = new Vector3(0,0,0);
         }
-        
-       
-        rot += Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
-        transform.eulerAngles = new Vector3 (0,rot,0);
-        controller.Move(moveDir*Time.deltaTime);
     }
     public void StartDurability() {
         currentHealth = MaxHealth;
@@ -52,6 +76,10 @@ public class MovementChar : MonoBehaviour
     public void Durability() {
         currentHealth = currentHealth - 0.01f;
         _slide.value = currentHealth;
+        if(currentHealth == 0) {
+            currentHealth = 0;
+        }
     }
+
 
 }

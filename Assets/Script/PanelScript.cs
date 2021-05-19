@@ -7,6 +7,9 @@ public class PanelScript : MonoBehaviour
 {
 //    public GameObject Panel;
    int counter;
+   public MovementChar playerHealth;
+   public float durabilityBonus = 50f;
+
    [SerializeField] private Canvas customCanvas;
 //    public void OnTriggerEnter(Collider other) {
 //        Panel.gameObject.SetActive(true);
@@ -23,11 +26,18 @@ public class PanelScript : MonoBehaviour
            customCanvas.enabled = true;
        }
     }
-    public void Finish() {
+    public void Finish(int check) {
         Debug.Log("hai2");
-           customCanvas.enabled = false;
-           Cursor.lockState = CursorLockMode.Locked;
-           Cursor.visible = false;
+        if(check == 0) {
+            playerHealth.currentHealth = playerHealth.currentHealth - durabilityBonus ;
+        }
+        else if (check == 1) {
+            playerHealth.currentHealth = playerHealth.currentHealth + durabilityBonus ;
+        }
+        customCanvas.enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 //    public void showhidePanel(){
 //        counter++;

@@ -11,7 +11,7 @@ public class PickupItem : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             Destroy(gameObject);   
-            playerHealth.currentHealth = playerHealth.currentHealth - durabilityBonus ;
+            playerHealth.currentHealth = playerHealth.currentHealth + durabilityBonus ;
         }
     }
 }
