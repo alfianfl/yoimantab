@@ -74,7 +74,7 @@ public class MovementChar : MonoBehaviour
         
     }    
     public void Durability() {
-        currentHealth = currentHealth - 0.01f;
+        currentHealth = currentHealth - 0.03f;
         _slide.value = currentHealth;
         if(currentHealth == 0) {
             currentHealth = 0;

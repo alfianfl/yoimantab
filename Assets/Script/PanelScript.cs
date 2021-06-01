@@ -8,7 +8,7 @@ public class PanelScript : MonoBehaviour
 //    public GameObject Panel;
    int counter;
    public MovementChar playerHealth;
-   public float durabilityBonus = 50f;
+   public float durabilityBonus = 20f;
 
    [SerializeField] private Canvas customCanvas;
 //    public void OnTriggerEnter(Collider other) {

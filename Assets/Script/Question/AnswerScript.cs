@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class AnswerScript : MonoBehaviour
 {
-    public bool isCorrect = false;
+    public bool isCorrect ;
     // public QuizManager quizManager;
     // public SceneSwitch scene;
     public PanelScript panel;
     public void Answer()
     {
-        if(isCorrect)
+        Debug.Log(isCorrect);
+        if(isCorrect == true)
         {
             Debug.Log("Correct Answer");
             panel.Finish(1);
