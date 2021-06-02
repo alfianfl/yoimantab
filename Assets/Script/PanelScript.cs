@@ -20,11 +20,12 @@ public class PanelScript : MonoBehaviour
 //            Panel.gameObject.SetActive(true);
 //        }
     public void OnTriggerEnter(Collider other) {
-       if(other.CompareTag("Player")){
-           Cursor.lockState = CursorLockMode.None;
-           Cursor.visible = true;
-           customCanvas.enabled = true;
-       }
+        Destroy(gameObject);   
+        if(other.CompareTag("Player")){
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            customCanvas.enabled = true;
+        }
     }
     public void Finish(int check) {
         Debug.Log("hai2");
@@ -33,6 +34,7 @@ public class PanelScript : MonoBehaviour
         }
         else if (check == 1) {
             playerHealth.currentHealth = playerHealth.currentHealth + durabilityBonus ;
+            playerHealth.score = playerHealth.score + 1;
         }
         customCanvas.enabled = false;
         Cursor.lockState = CursorLockMode.Locked;

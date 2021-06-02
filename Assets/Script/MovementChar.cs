@@ -5,7 +5,10 @@ using UnityEngine;
 public class MovementChar : MonoBehaviour
 {    
     [SerializeField] float speed = 1f ;
+   [SerializeField] private Canvas customCanvas;
+
     public CharacterController controller;
+    public AudioSource audioSource;
     Vector3 moveDir = Vector3.zero;
     float rot = 0f;
     float rotSpeed= 100;
@@ -13,6 +16,7 @@ public class MovementChar : MonoBehaviour
     public float MaxHealth;
     public Slider _slide;
     public float currentHealth;
+    public float score;
     
 
     // Start is called before the first frame update
@@ -20,7 +24,9 @@ public class MovementChar : MonoBehaviour
     void Start() {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         StartDurability();
+        score = 0;
     }
     
     void Update()
@@ -28,6 +34,9 @@ public class MovementChar : MonoBehaviour
         if(currentHealth > 0) {
             if (Input.GetKey(KeyCode.W) ||Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D) )
             {
+                if(!audioSource.isPlaying){
+                    audioSource.Play();
+                }
                 animator.SetInteger("condition",1);
                 animator.SetBool("defeat",false);
                 float h = Input.GetAxisRaw("Horizontal");
@@ -42,6 +51,7 @@ public class MovementChar : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.S)) 
             {
+                audioSource.Play();
                 animator.SetInteger("condition",1);
                 animator.SetBool("defeat",false);
                 moveDir = new Vector3(0,0,1).normalized;
@@ -57,16 +67,24 @@ public class MovementChar : MonoBehaviour
                 animator.SetInteger("condition",0);
                 animator.SetBool("defeat",false);
                 moveDir = new Vector3(0,0,0);
+                audioSource.Stop();
+
             }
 
         }
         else {
             animator.SetInteger("condition",0);
             animator.SetBool("defeat",true);
-
             moveDir = new Vector3(0,0,0);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            customCanvas.enabled = true;
+            audioSource.Stop();
+
         }
     }
+
+    
     public void StartDurability() {
         currentHealth = MaxHealth;
         _slide.maxValue = MaxHealth;
