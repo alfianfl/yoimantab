@@ -15,6 +15,6 @@ public class Restart : MonoBehaviour
     }
     public void NextStage()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

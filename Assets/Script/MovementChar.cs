@@ -6,6 +6,7 @@ public class MovementChar : MonoBehaviour
 {    
     [SerializeField] float speed = 1f ;
    [SerializeField] private Canvas customCanvas;
+   [SerializeField] private Canvas customCanvas1;
 
     public CharacterController controller;
     public AudioSource audioSource;
@@ -16,6 +17,7 @@ public class MovementChar : MonoBehaviour
     public float MaxHealth;
     public Slider _slide;
     public float currentHealth;
+    public PickupItemFinish pickupItemFinish;
     public float score;
     
 
@@ -25,12 +27,15 @@ public class MovementChar : MonoBehaviour
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        customCanvas1.enabled = false;
+        customCanvas.enabled = false;
         StartDurability();
         score = 0;
     }
     
     void Update()
     {
+        if(pickupItemFinish.scorefinal == 0) {
         if(currentHealth > 0) {
             if (Input.GetKey(KeyCode.W) ||Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D) )
             {
@@ -82,6 +87,14 @@ public class MovementChar : MonoBehaviour
             audioSource.Stop();
 
         }
+        }
+        else {
+            
+            animator.SetInteger("condition",0);
+            animator.SetBool("defeat",true);
+            moveDir = new Vector3(0,0,0);
+            audioSource.Stop();
+        }
     }
 
     
@@ -94,6 +107,7 @@ public class MovementChar : MonoBehaviour
     public void Durability() {
         currentHealth = currentHealth - 0.03f;
         _slide.value = currentHealth;
+
         if(currentHealth == 0) {
             currentHealth = 0;
         }
