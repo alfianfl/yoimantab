@@ -162,8 +162,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    - Class: 258
-      Script: {instanceID: 0}
     - Class: 1953259897
       Script: {instanceID: 0}
     Assets/CoreGame1.unity:
@@ -279,7 +277,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
-    Assets/menuScene/menuScene 1.unity:
+    Assets/menuScene/menuScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -1159,7 +1157,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 5
   scenePathNames:
-  - Assets/menuScene/menuScene 1.unity
+  - Assets/menuScene/menuScene.unity
   - Assets/CoreGame.unity
   - Assets/CoreGame1.unity
-  playerPath: D:/Maseko/MAZEKU.exe
+  playerPath: D:/New folder/MAZEKU.exe
